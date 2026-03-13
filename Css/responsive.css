@@ -1,0 +1,77 @@
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+    .store-layout {
+        flex-direction: column;
+    }
+    .categories-section {
+        flex: none;
+        width: 100%;
+        position: static;
+        margin-bottom: 20px;
+    }
+    .category-list {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+    .category-list li {
+        border-bottom: none;
+        padding: 5px 15px;
+        background: var(--bg-light);
+        border-radius: 20px;
+    }
+    .category-list li.active {
+        background: var(--primary-red);
+        color: white;
+    }
+}
+
+/* 2 FILAS EN MÓVILES */
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 10px;
+    }
+    .search-bar {
+        width: auto;
+        flex-grow: 1;
+        margin: 0 10px;
+    }
+    .hero-overlay h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* MAGIA PARA 2 COLUMNAS EXACTAS */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .product-card {
+        padding: 10px;
+    }
+    .product-image {
+        height: 120px;
+    }
+    .product-title {
+        font-size: 0.85rem;
+        height: 35px;
+    }
+    .product-price {
+        font-size: 0.95rem;
+    }
+    .badge-oferta {
+        width: 35px; height: 35px;
+        font-size: 0.7rem;
+    }
+    .btn-add-cart {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+    .product-detail-body {
+        flex-direction: column;
+    }
+    .product-detail-body img {
+        width: 100%;
+    }
+}

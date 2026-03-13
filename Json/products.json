@@ -1,0 +1,47 @@
+[
+  {
+    "id": "prod_001",
+    "nombre": "Aceite de Oliva «Alma» (1 litro)",
+    "categoria": "Aderezos",
+    "precio": 13.20,
+    "descuento": 0,
+    "mas_vendido": true,
+    "nuevo": false,
+    "oferta": false,
+    "imagenes": ["aceite.jpg"],
+    "descripcion": "Aceite de oliva virgen extra de la mejor calidad.",
+    "disponibilidad": true,
+    "created_at": "2026-03-12T10:00:00.000Z",
+    "modified_at": "2026-03-12T10:00:00.000Z"
+  },
+  {
+    "id": "prod_002",
+    "nombre": "Pack x 12 Néctar de Pera (12x330ml)",
+    "categoria": "Bebidas no alcohólicas",
+    "precio": 15.22,
+    "descuento": 10,
+    "mas_vendido": false,
+    "nuevo": true,
+    "oferta": true,
+    "imagenes": ["nectar.jpg"],
+    "descripcion": "Refrescante néctar de pera, ideal para meriendas.",
+    "disponibilidad": true,
+    "created_at": "2026-03-12T10:00:00.000Z",
+    "modified_at": "2026-03-12T10:00:00.000Z"
+  },
+  {
+    "id": "prod_003",
+    "nombre": "Frijol Negro (500g)",
+    "categoria": "Despensa",
+    "precio": 1.73,
+    "descuento": 0,
+    "mas_vendido": true,
+    "nuevo": false,
+    "oferta": false,
+    "imagenes": ["frijol.jpg"],
+    "descripcion": "Frijoles negros de primera calidad, grano entero.",
+    "disponibilidad": true,
+    "created_at": "2026-03-12T10:00:00.000Z",
+    "modified_at": "2026-03-12T10:00:00.000Z"
+  }
+]
