@@ -45,6 +45,14 @@ function applyImageFallback(img) {
 document.addEventListener("DOMContentLoaded", async () => {
   await fetchProducts();
   loadCartFromStorage();
+
+  // NUEVA LÓGICA: Leer el hash que envía el backend
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const productId = decodeURIComponent(hash);
+    showProductDetail(productId); // Llama a tu función existente
+  }
+
   initRouter();
 });
 
@@ -53,11 +61,28 @@ async function fetchProducts() {
   try {
     const response = await fetch("./Json/products.json");
     if (!response.ok) throw new Error("Error en red");
-    allProducts = await response.json();
+    
+    const data = await response.json();
+
+    // ARREGLO PARA ESTRUCTURA DE JSON:
+    // Si data es un Array, lo usa. Si es un objeto, busca la propiedad .products
+    allProducts = Array.isArray(data) ? data : (data.products || []);
+
     renderProducts(allProducts);
+
+    // LÓGICA DE REDIRECCIÓN (Para que funcione el link del backend)
+    // Al terminar de cargar, revisamos si hay un ID en el hash (ej: #prod_001)
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      // Usamos un pequeño delay para asegurar que el DOM esté listo
+      setTimeout(() => {
+        showProductDetail(hash);
+      }, 100);
+    }
+
   } catch (error) {
     console.error("Error cargando productos:", error);
-    productsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: red;">No se pudieron cargar los productos. Recuerda abrir este archivo usando un Servidor Local (Ej: Live Server).</p>`;
+    productsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: red;">No se pudieron cargar los productos.</p>`;
   }
 }
 
