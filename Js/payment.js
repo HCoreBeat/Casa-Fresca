@@ -1,4 +1,4 @@
-const BACKEND = 'http://127.0.0.1:10000';//'https://backend-buquenque.onrender.com';
+const BACKEND = 'https://backend-casafresca.onrender.com';
 
 
 document.addEventListener('DOMContentLoaded', () => {
